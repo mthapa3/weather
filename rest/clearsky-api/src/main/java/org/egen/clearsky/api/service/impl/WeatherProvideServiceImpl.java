@@ -43,11 +43,11 @@ public class WeatherProvideServiceImpl implements WeatherProviderService {
 		case URI.DESCRIPTION:
 			return w.getDescription();
 		case URI.HUMIDITY:
-			return w.getHumidity();
+			return w.getHumidity()+"";
 		case URI.PRESSURE:
-			return w.getPressure();
+			return w.getPressure()+"";
 		case URI.TEMPERATURE:
-			return w.getTemperature();
+			return w.getTemperature()+"";
 		case URI.WIND:
 			return w.getWind().toString();
 		}
@@ -56,14 +56,15 @@ public class WeatherProvideServiceImpl implements WeatherProviderService {
 
 	@Override
 	public List<WeatherData> findDailyAveWeatherByCity(String city) {
-		// TODO Auto-generated method stub
-		return null;
+		if(city==null || city.isEmpty()) throw new BadRequestException("City not correct.");
+		return weatherRepository.findDailyAveWeatherByCity(city.toLowerCase());
 	}
 
 	@Override
 	public List<WeatherData> findHourlyAveWeatherByCity(String city) {
 		// TODO Auto-generated method stub
-		return null;
+		if(city==null || city.isEmpty()) throw new BadRequestException("City not correct.");
+		return weatherRepository.findHourlyAveWeatherByCity(city.toLowerCase());
 	}
 
 }

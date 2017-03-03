@@ -19,9 +19,9 @@ public class WeatherData {
 	@Id
 	private String id;
 	private String city;
-	private String temperature;
-	private String pressure;
-	private String humidity;
+	private float temperature;
+	private float pressure;
+	private float humidity;
 	private Wind wind;
 	private String description;
 
@@ -44,27 +44,27 @@ public class WeatherData {
 		this.city = city;
 	}
 
-	public String getTemperature() {
+	public float getTemperature() {
 		return temperature;
 	}
 
-	public void setTemperature(String temperature) {
+	public void setTemperature(float temperature) {
 		this.temperature = temperature;
 	}
 
-	public String getPressure() {
+	public float getPressure() {
 		return pressure;
 	}
 
-	public void setPressure(String pressure) {
+	public void setPressure(float pressure) {
 		this.pressure = pressure;
 	}
 
-	public String getHumidity() {
+	public float getHumidity() {
 		return humidity;
 	}
 
-	public void setHumidity(String humidity) {
+	public void setHumidity(float humidity) {
 		this.humidity = humidity;
 	}
 

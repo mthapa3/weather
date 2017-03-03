@@ -6,7 +6,9 @@ import org.egen.clearsky.api.entity.WeatherData;
 import org.springframework.cglib.core.Predicate;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface WeatherRepository extends MongoRepository<WeatherData, String>, WeatherRepositoryCustom {
 
 	@Query("{ 'city' : {$regex : ?0, $options: 'i'} }")
