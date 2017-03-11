@@ -1,0 +1,31 @@
+/build/
+/target/
+.metadata
+build/
+**/.classpath
+*.project
+**/.settings
+.settings/
+rest/
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.war
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+
+# Compiled source #
+###################
+*.class
