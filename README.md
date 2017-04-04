@@ -1,5 +1,5 @@
 # clearsky
-J2EE project: clearsky 	
+J2EE project: clearsky 	 
 
 ## directory structure:	
 **`rest`** [*module-rest*]: contains SpringMVC based REST API	
