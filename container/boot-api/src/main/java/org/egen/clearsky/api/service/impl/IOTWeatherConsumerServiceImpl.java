@@ -1,6 +1,9 @@
 package org.egen.clearsky.api.service.impl;
 
+import java.util.Date;
+
 import org.egen.clearsky.api.entity.WeatherData;
+import org.egen.clearsky.api.exception.BadRequestException;
 import org.egen.clearsky.api.repository.WeatherRepository;
 import org.egen.clearsky.api.service.IOTWeatherConsumerService;
 import org.springframework.stereotype.Service;
@@ -18,7 +21,12 @@ public class IOTWeatherConsumerServiceImpl implements IOTWeatherConsumerService 
 	@Override
 	@Transactional
 	public void submitWeatherData(WeatherData weatherData) {
-		weatherRepository.insert(weatherData);
+		Date date = weatherData.getTimestamp();
+		
+		if(!date.after(new Date())){
+			weatherRepository.insert(weatherData);
+		}else 
+			throw new BadRequestException("Date is in the Future");
 
 	}
 
